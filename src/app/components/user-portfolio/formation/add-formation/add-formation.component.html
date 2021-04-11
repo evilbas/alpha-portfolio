@@ -1,0 +1,56 @@
+<div>
+    <p><button mat-fab color="accent" class="fa fa-2x fa-user m-2" (click)="onProfilReturn()"></button>Retour à mon profil</p>
+</div>
+<h3 class="text-center display-4">{{titleFormation | uppercase}}</h3><hr>
+
+    <div class="container" *ngIf="formGroup">
+        <div class="row">
+            <div class="col-sm-5">
+            <form [formGroup]="formGroup">
+                <div class="form-group">
+                    <label for="nom">Nom de la Formation</label>
+                    <input type="text" placeholder="Ex: Expert en Informatique" id="nom" class="form-control" formControlName="nomFormation">
+                </div>
+                <div class="form-group">
+                    <label for="titre">Domaine</label>
+                    <input type="text" placeholder="Ex: Informatique" id="titre" class="form-control" formControlName="titre">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" placeholder="Ex: Cette formation est orientée Web Frontend et Backend" id="description" class="form-control" formControlName="description">
+                </div>
+
+                <div class="form-group">
+                    <label for="institut">Institut</label>
+                    <input type="text" placeholder="Ex: EPSI" id="institut" class="form-control" formControlName="institut">
+                </div>
+
+                <div class="form-group">
+                    <label for="niveau">Niveau</label>
+                    <input type="text" placeholder="Ex: Master" id="niveau" class="form-control" formControlName="niveauFormation">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateCreation">Date Création</label>
+                    <input type="date" id="dateCreation" class="form-control" formControlName="annee">
+                </div>
+                
+                <div class="form-group">
+                    <label for="autonome">Autonomie</label>
+                    <select id="autonome" class="form-control" 
+                    formControlName="autonomie">
+                    <option selected="selected" disabled>Formation</option>
+                    <option value="true">Validé</option>
+                    <option value="false">En Cours</option>
+                    </select>
+                </div><hr>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" (click)="onAddFormation()">Créer la Formation</button>
+                </div>
+            </form>
+            </div>
+            <div class="col-sm-7">
+                <img src="../../../../../assets/images/formation.jpg" width="100%" alt="">
+            </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<h3 class="text-center display-4">{{ title }}<hr>
+    <div *ngIf="formation" class="container">
+        <table class="table table-striped">
+            <thead>
+                <th>Formation</th>
+                <th>Description</th>
+                <th>Année</th>
+                <th>Institut</th>
+                <th>Niveau</th>
+                <th>Autonomie</th>
+            </thead>
+                <app-formation-item [formation]="formation" *ngFor="let formation of formation | async"
+                style="display: contents;"></app-formation-item> 
+        </table>
+</div>
+

@@ -1,0 +1,20 @@
+<h3 class="text-center display-4">{{ title }} - <button (click)="showMyExperience()" class="btn btn-danger">Here</button></h3>
+
+<div class="container-fluid">
+    <table class="table table-striped" *ngIf="experience">
+        <thead class="thead-dark">
+            <tr>
+                <th>THEME</th>
+                <th>DESCRIPTION DES MISSIONS</th>
+                <th>DEBUT</th>
+                <th>FIN</th>
+                <th>LIEU</th>
+                <th style="background-color: cyan">EDIT / SUPP</th>
+            </tr>
+        </thead>
+
+        <app-experience-item [experience]="experience" 
+        *ngFor="let experience of experience | async"
+        style="display: contents;"></app-experience-item>
+    </table>
+</div>

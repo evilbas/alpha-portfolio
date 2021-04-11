@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center display-4">CREER VOTRE BLOG</h1><hr>
+
+    <form [formGroup]="formGroup">
+        <div class="form-group">
+            <label for="presentation">Présentation vous</label>
+            <textarea placeholder="{{ description }}" id="presentation" rows="3" class="form-control fond" formControlName="presentation"></textarea>
+        </div><hr>
+        <div class="form-group col-md-6">
+            <label for="dispo" class="label-control"> Disponibilité </label>
+            <textarea class="form-control" id="dispo" rows="4" formControlName="free"></textarea>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="divertissement" class="label-control"> Divertissement </label>
+            <textarea class="form-control" id="divertissement" rows="4" formControlName="divertissement"></textarea>
+        </div>
+        <button class="btn btn-lg btn-success" (click)="onAddBlog()">Enregistrer</button>
+    </form>
+</div>

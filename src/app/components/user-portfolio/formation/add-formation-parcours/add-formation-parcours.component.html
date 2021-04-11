@@ -1,0 +1,86 @@
+<div class="container">
+    <h3 class="text-center">Parcours Professionnel</h3><hr>
+    <button mat-raised-button color="accent" class="btn btn-primary mr-3" (click)="onOpenCompetence()">Compétence</button>
+    <button mat-raised-button color="accent" class="btn btn-primary" (click)="onOpenExperience()">Expérience</button>
+</div>
+<div class="container">
+
+<div class="row">
+<div *ngIf="formGroup" class="col-sm-6">
+    <h2 class="text-center">{{ titleCompetence | uppercase}}</h2><hr>
+    <form [formGroup]="formGroup">
+        <!-- <quill-editor></quill-editor> -->
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Domaine Principale" formControlName="domainePrincipal">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Discipline" formControlName="domaineSecondaire">
+        </div>
+        <div class="form-group">
+            <textarea type="text" rows="5" class="form-control" placeholder="Description des Acquis" formControlName="acquis"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Niveau" formControlName="niveau">
+        </div>
+        <div class="form-group">
+            <button mat-raised-button color="primary" [disabled]="count >= 1" (click)="onAddCompetence()">Valider</button>
+        </div>
+        
+    </form>
+</div><hr>
+<div *ngIf="competence" class="col-sm-6">
+    <h3 class="text-center"> Compétence Ajoutée </h3><hr>
+    <div>
+        <p>Domaine Principale</p>
+        <strong> {{ competence.domainePrincipal }} </strong>
+    </div><hr>
+    <div>
+        <p>Discipline</p>
+        <strong> {{ competence.domaineSecondaire }} </strong>
+    </div><hr>
+    <div>
+        <p>Aquis</p>
+        <pre>
+        <strong> {{ competence.acquis }} </strong>
+        </pre>
+    </div><hr>
+    <div>
+        <p>Niveau</p>
+        <strong> {{ competence.niveau }} </strong>
+    </div>
+</div><hr>
+</div>
+
+
+
+<div>
+
+    <div *ngIf="formGroupExperience" class="col-sm-6">
+        <h2> {{ titleExperience | uppercase}} </h2><hr>
+        <form [formGroup]="formGroupExperience">
+            <!-- <quill-editor></quill-editor> -->
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Administrer une base de données" formControlName="titre">
+            </div>
+            <div class="form-group">
+                <textarea type="text" rows="5" class="form-control" placeholder="Les différentes tâches" formControlName="mission"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Institut" formControlName="lieu">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" placeholder="Début" formControlName="debut">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" placeholder="Fin" formControlName="fin">
+            </div>
+            <div class="form-group">
+                <button mat-raised-button color="primary" (click)="onAddExperience()">Valider</button>
+            </div>
+        </form>
+    </div><hr> 
+</div>
+
+</div>
+
+

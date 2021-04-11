@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-4">
+            <h4><img src="" width="40%" alt="" class="image-circle fa fa-user fa-5x ml-4"></h4>
+            <button mat-raised-button color="primary" (click)="showProfil()">Voir Profil</button></div>
+        <div class="col-lg-12 col-md-12 col-sm-12"><hr>
+            <div class="fond" *ngIf="monProfil">
+                <div>
+                <h3 class="display-4 text-center"><b class="fa fa-user mr-4"> </b>{{ monProfil.prenom | uppercase}} {{ monProfil.nom | uppercase }} <button mat-raised-button class="ml-5 mt-2" (click)="onCreateFormation(monProfil)">Gestion Formation</button> </h3><hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-calendar"></i></p>
+                        <p class="text-center couleur">{{ monProfil.naissance | date:'shortDate' }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-home"></i></p>
+                        <p class="text-center couleur">{{ monProfil.adresse }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-envelope"></i></p>
+                        <p class="text-center couleur">{{ monProfil.codepostale }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-phone"></i></p>
+                        <p class="text-center couleur">{{ monProfil.telephone }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-building"></i></p>
+                        <p class="text-center couleur">{{ monProfil.ville }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-flag"></i></p>
+                        <p class="text-center couleur">{{ monProfil.pays | uppercase }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-users"></i></p>
+                        <p class="text-center couleur">{{ monProfil.statut }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-user"></i></p>
+                        <p class="text-center couleur">{{ monProfil.civilite }}</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <p class="text-center"><i class="fa fa-2x fa-at"></i></p>
+                        <p class="text-center couleur"><a href="mailto:asin.mou@gmail.com">{{ monProfil.email }}</a></p>
+                    </div>
+                    <div class="col-lg-12">
+                        <h3 class="text-center"><button mat-raised-button color="primary" (click)="editerProfil(monProfil)">Editer mon profil</button></h3>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary" class="ml-5 mb-2" (click)="onCreateBlog(monProfil)">Créer Blog</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div><hr>
+
+<app-formation></app-formation>

@@ -1,0 +1,151 @@
+<h3 class="display-4 text-center">Modifier votre profil</h3><hr>
+<div class="container-fluid back" *ngIf="fg">
+    <p><em>Tous les champs sont obligatoires.</em></p>
+    <form [formGroup]="fg">
+        <div class="container">
+          <div class="form-group col-md-1">
+            <label for="monid">
+              ID<input id="monid" type="" class="form-control backColor" formControlName="idProfil"></label>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="sexe">Civilité</label>
+                <select id="sexe" class="form-control" 
+                formControlName="civilite"
+                [ngClass]="{'is-invalid': submitted && fg.controls.statut.errors}">
+                  <option selected="selected" disabled>Civilité</option>
+                  <option value="Madame">Madame</option>
+                  <option value="Monsieur">Monsieur</option>
+                </select>
+            </div>
+          <div class="form-group col-md-4">
+            <label for="lenom">Nom </label>
+            <input type="text" class="form-control" id="lenom" placeholder="Votre Nom" 
+            formControlName="nom" 
+            [ngClass]="{'is-invalid': submitted && fg.controls.nom.errors}">
+            <div *ngIf="submitted && fg.controls.nom.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.nom.errors.required">Champ requis</div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="leprenom">Prénom </label>
+            <input type="text" class="form-control" 
+            id="leprenom" placeholder="Votre Prénom" 
+            formControlName="prenom"
+            [ngClass]="{'is-invalid': submitted && fg.controls.prenom.errors}">
+            <div *ngIf="submitted && fg.controls.prenom.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.prenom.errors.required">Champ requis</div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="ladatenaissance">Date de naissance </label>
+            <input type="date" class="form-control" id="ladatenaissance" placeholder="Date de naissance" 
+            formControlName="naissance"
+            [ngClass]="{'is-invalid': submitted && fg.controls.naissance.errors}">
+            <div *ngIf="submitted && fg.controls.naissance.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.naissance.errors.required">Champ requis</div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="lemail">Adresse Electronique</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="lemail" placeholder="Email" aria-describedby="inputGroupPrepend" 
+              formControlName="email"
+              [ngClass]="{'is-invalid': submitted && fg.controls.email.errors}">
+              <div *ngIf="submitted && fg.controls.email.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.email.errors.required">Champ requis</div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+
+
+        <div class="form-group">
+          <label for="adresse">Adresse</label>
+          <input type="text" class="form-control" id="adresse" placeholder="N° Rue, Résidence, Etage - Appartement" 
+          formControlName="adresse"
+          [ngClass]="{'is-invalid': submitted && fg.controls.adresse.errors}">
+          <div *ngIf="submitted && fg.controls.adresse.errors" class="invalid-feedback">
+              <div *ngIf="fg.controls.adresse.errors.required">Champ requis</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="villa">Ville </label>
+            <input type="text" class="form-control" id="villa" 
+            formControlName="ville"
+            [ngClass]="{'is-invalid': submitted && fg.controls.ville.errors}">
+            <div *ngIf="submitted && fg.controls.ville.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.ville.errors.required">Champ requis</div>
+            </div>
+        </div>
+
+
+          <div class="form-group col-md-4">
+            <label for="lepays">Pays</label>
+            <select id="lepays" class="form-control" 
+            formControlName="pays"
+            [ngClass]="{'is-invalid': submitted && fg.controls.pays.errors}">
+              <option selected="selected" disabled>Sélectionner votre pays</option>
+              <option value="France">France</option>
+              <option value="Sénégal">Sénégal</option>
+              <option value="Canada">Canada</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="code">Code Postal</label>
+            <input type="number" class="form-control" id="code" 
+            formControlName="codepostale"
+            [ngClass]="{'is-invalid': submitted && fg.controls.codepostale.errors}">
+            <div *ngIf="submitted && fg.controls.codepostale.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.codepostale.errors.required">Champ requis</div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="letelephone"> N° Téléphone </label>
+          <input type="text" class="form-control" id="letelephone" placeholder="Tél" 
+          formControlName="telephone" 
+          [ngClass]="{'is-invalid': submitted && fg.controls.telephone.errors}">
+          <div *ngIf="submitted && fg.controls.telephone.errors" class="invalid-feedback">
+              <div *ngIf="fg.controls.telephone.errors.required">Champ requis</div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="lestatut">Situation Matrimoniale</label>
+            <select id="lestatut" class="form-control" 
+            formControlName="statut"
+            [ngClass]="{'is-invalid': submitted && fg.controls.statut.errors}">
+              <option selected="selected" disabled>Sélectionner votre situation</option>
+              <option value="Célibataire">Célibataire</option>
+              <option value="Marié(e)">Marié(e)</option>
+              <option value="Divorcé(e)">Divorcé(e)</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="letelephone"> N° Téléphone </label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control" placeholder="Photo Profil" 
+            formControlName="photo" 
+            [ngClass]="{'is-invalid': submitted && fg.controls.telephone.errors}">
+            <div *ngIf="submitted && fg.controls.telephone.errors" class="invalid-feedback">
+                <div *ngIf="fg.controls.telephone.errors.required">Champ requis</div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <button (click)="onUpProfil()" class="btn btn-primary">Enregistrer</button>
+    </div>
+    </form>
+</div>

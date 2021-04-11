@@ -1,0 +1,14 @@
+.myClass {
+  margin: 2%;
+}
+.myClass:hover,
+.couleur:hover {
+  margin: 2%;
+  border-radius: 20px/20px;
+  background-color: cadetblue;
+  color: white;
+}
+
+.couleur {
+  color: orangered;
+}

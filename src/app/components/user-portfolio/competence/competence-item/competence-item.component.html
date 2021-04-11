@@ -1,0 +1,9 @@
+<tbody *ngIf="competence">
+    <tr>
+        <td> {{ competence.domainePrincipal }} </td>
+        <td> {{ competence.domaineSecondaire }} </td>
+        <td> {{ competence.acquis }} </td>
+        <td> {{ competence.niveau }} </td>
+        <td class="fa fa-2x fa-trash" (click)="onDelete(c)"></td>
+    </tr> 
+</tbody>
